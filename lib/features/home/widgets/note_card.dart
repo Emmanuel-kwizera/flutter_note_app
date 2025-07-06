@@ -95,6 +95,13 @@ class NoteCard extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
+              icon: const Icon(Icons.delete_outline, color: AppColors.error),
+              tooltip: 'Delete Note',
+              // --- UPDATE THE ONPRESSED CALLBACK ---
+              // Instead of deleting directly, call our new dialog method
+              onPressed: () => _showDeleteConfirmationDialog(context, ref),
+            ),
+            IconButton(
               icon: const Icon(
                 Icons.edit_outlined,
                 color: AppColors.textSecondary,
@@ -109,13 +116,6 @@ class NoteCard extends ConsumerWidget {
                   ),
                 );
               },
-            ),
-            IconButton(
-              icon: const Icon(Icons.delete_outline, color: AppColors.error),
-              tooltip: 'Delete Note',
-              // --- UPDATE THE ONPRESSED CALLBACK ---
-              // Instead of deleting directly, call our new dialog method
-              onPressed: () => _showDeleteConfirmationDialog(context, ref),
             ),
           ],
         ),

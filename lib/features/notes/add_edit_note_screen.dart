@@ -130,11 +130,16 @@ class _AddEditNoteScreenState extends ConsumerState<AddEditNoteScreen> {
               ),
             )
           else
-            IconButton(
+            TextButton(
               onPressed: _saveNote,
-              icon: const Icon(Icons.save_as_outlined),
-              tooltip: 'Save Note',
-            ),
+              child: const Text(
+                'Save',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            )
         ],
       ),
       body: Padding(
